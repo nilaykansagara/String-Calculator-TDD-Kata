@@ -22,7 +22,8 @@
 
             // convert all numbers from string to integers
             var values = numbers.Split(delimiters.ToArray())
-                .Select(x => Convert.ToInt32(x));
+                .Select(x => Convert.ToInt32(x))
+                .Where(x => x <= 1000);
 
             // check for negative number
             var negativeNumbers = values.Where(x => x < 0).ToList();
