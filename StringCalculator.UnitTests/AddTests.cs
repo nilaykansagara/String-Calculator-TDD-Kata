@@ -95,5 +95,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(sum);
         }
+
+        [Fact]
+        public void Add_AnyLengthDelimiter_ReturnsCorrectSum()
+        {
+            // Act
+            var result = _stringCalculator.Add("//[***]\n1***2***3");
+
+            // Assert
+            result.Should().Be(6);
+        }
     }
 }
