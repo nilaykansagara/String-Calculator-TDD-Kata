@@ -16,11 +16,15 @@
             // check for different delimiter
             if (numbers.StartsWith("//"))
             {
-                // check if delimiter is longer than one character
                 int newLineDelimiterIndex = numbers.IndexOf('\n');
-                if (newLineDelimiterIndex >= 5)
+                var delimiterString = numbers.Substring(2, newLineDelimiterIndex - 2);
+
+                // check if delimiter is longer than one character
+                if (delimiterString.Length > 1)
                 {
-                    delimiters.Add(numbers.Substring(3, newLineDelimiterIndex - 4));
+                    // split delimiter string to remove brackets
+                    var differentDelimiters = delimiterString.Split(new[] { "[", "]" }, StringSplitOptions.RemoveEmptyEntries);
+                    delimiters.AddRange(differentDelimiters.ToList());
                 }
                 else
                 {
