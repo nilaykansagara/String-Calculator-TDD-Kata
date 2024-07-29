@@ -11,7 +11,7 @@
             }
 
             // convert all numbers to int and sum up them
-            return numbers.Split(',')
+            return numbers.Split(',', '\n')
                     .Select(x => Convert.ToInt32(x))
                     .Sum();
         }
