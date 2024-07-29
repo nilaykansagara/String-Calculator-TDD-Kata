@@ -47,24 +47,28 @@ namespace StringCalculator.UnitTests
             result.Should().Be(sum);
         }
 
-        [Fact]
-        public void Add_NewLineDelimiter_ReturnsSumOfNumbers()
+        [Theory]
+        [InlineData("1\n2", 3)]
+        [InlineData("1\n2,3", 6)]
+        public void Add_NewLineDelimiter_ReturnsSumOfNumbers(string numbers, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("1\n2");
+            var result = _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Be(3);
+            result.Should().Be(sum);
         }
 
-        [Fact]
-        public void Add_DifferentDelimiter_ReturnsCorrectSum()
+        [Theory]
+        [InlineData("//;\n3;4", 7)]
+        [InlineData("//^\n2^3", 5)]
+        public void Add_DifferentDelimiter_ReturnsCorrectSum(string numbers, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("//;\n3;4");
+            var result = _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Be(7);
+            result.Should().Be(sum);
         }
     }
 }
