@@ -56,5 +56,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(3);
         }
+
+        [Fact]
+        public void Add_DifferentDelimiter_ReturnsCorrectSum()
+        {
+            // Act
+            var result = _stringCalculator.Add("//;\n3;4");
+
+            // Assert
+            result.Should().Be(7);
+        }
     }
 }
