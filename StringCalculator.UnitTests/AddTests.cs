@@ -41,5 +41,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(3);
         }
+
+        [Fact]
+        public void Add_StringWithThreeNumbers_ReturnsSumOfAllThreeNumbers()
+        {
+            // Act
+            var result = _stringCalculator.Add("3,5,7");
+
+            // Assert
+            result.Should().Be(15);
+        }
     }
 }
