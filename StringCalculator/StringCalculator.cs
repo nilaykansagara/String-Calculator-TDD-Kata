@@ -4,7 +4,7 @@
     {
         public int Add(string numbers)
         {
-            return -1;
+            return 0;
         }
     }
 }
