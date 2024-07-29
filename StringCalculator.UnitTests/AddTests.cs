@@ -31,5 +31,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(1);
         }
+
+        [Fact]
+        public void Add_StringWithTwoNumbers_ReturnsSumOfBothNumbers()
+        {
+            // Act
+            var result = _stringCalculator.Add("1,2");
+
+            // Assert
+            result.Should().Be(3);
+        }
     }
 }
