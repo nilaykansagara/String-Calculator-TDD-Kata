@@ -108,5 +108,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(sum);
         }
+
+        [Fact]
+        public void Add_MultipleDifferentDelimiter_ReturnsCorrectSum()
+        {
+            // Act
+            var result = _stringCalculator.Add("//[&][%][$]\n1%2$3&4");
+
+            // Assert
+            result.Should().Be(10);
+        }
     }
 }
