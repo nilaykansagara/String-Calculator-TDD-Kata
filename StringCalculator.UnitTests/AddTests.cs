@@ -61,7 +61,7 @@ namespace StringCalculator.UnitTests
 
         [Theory]
         [InlineData("//;\n3;4", 7)]
-        [InlineData("//^\n2^3", 5)]
+        [InlineData("//^\n2^3^5", 10)]
         public void Add_DifferentDelimiter_ReturnsCorrectSum(string numbers, int sum)
         {
             // Act
@@ -69,6 +69,16 @@ namespace StringCalculator.UnitTests
 
             // Assert
             result.Should().Be(sum);
+        }
+
+        [Fact]
+        public void Add_NegativeNumber_ThrowsException()
+        {
+            // Act
+            Action result = () => _stringCalculator.Add("-1");
+
+            // Assert
+            result.Should().Throw<Exception>();
         }
     }
 }
