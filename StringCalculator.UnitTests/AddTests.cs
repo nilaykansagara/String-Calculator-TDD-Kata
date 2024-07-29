@@ -22,34 +22,29 @@ namespace StringCalculator.UnitTests
             result.Should().Be(0);
         }
 
-        [Fact]
-        public void Add_StringWithSingleNumber_ReturnsSameNumber()
+        [Theory]
+        [InlineData("1", 1)]
+        [InlineData("2", 2)]
+        public void Add_SingleNumber_ReturnsSameNumber(string number, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("1");
+            var result = _stringCalculator.Add(number);
 
             // Assert
-            result.Should().Be(1);
+            result.Should().Be(sum);
         }
 
-        [Fact]
-        public void Add_StringWithTwoNumbers_ReturnsSumOfBothNumbers()
+        [Theory]
+        [InlineData("1,2", 3)]
+        [InlineData("3,5,7", 15)]
+        [InlineData("9,0,9,9,0,9,0,9", 45)]
+        public void Add_MultipleNumbers_ReturnsSumOfAllNumbers(string numbers, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("1,2");
+            var result = _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Be(3);
-        }
-
-        [Fact]
-        public void Add_StringWithThreeNumbers_ReturnsSumOfAllThreeNumbers()
-        {
-            // Act
-            var result = _stringCalculator.Add("3,5,7");
-
-            // Assert
-            result.Should().Be(15);
+            result.Should().Be(sum);
         }
     }
 }
