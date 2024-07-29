@@ -46,5 +46,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(sum);
         }
+
+        [Fact]
+        public void Add_NewLineDelimiter_ReturnsSumOfNumbers()
+        {
+            // Act
+            var result = _stringCalculator.Add("1\n2");
+
+            // Assert
+            result.Should().Be(3);
+        }
     }
 }
