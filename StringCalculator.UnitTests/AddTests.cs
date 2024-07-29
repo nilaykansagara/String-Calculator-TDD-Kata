@@ -21,5 +21,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(0);
         }
+
+        [Fact]
+        public void Add_StringWithSingleNumber_ReturnsSameNumber()
+        {
+            // Act
+            var result = _stringCalculator.Add("1");
+
+            // Assert
+            result.Should().Be(1);
+        }
     }
 }
