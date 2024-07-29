@@ -118,5 +118,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Be(10);
         }
+
+        [Fact]
+        public void Add_MultipleDifferentDelimiterOfAnyLength_ReturnsCorrectSum()
+        {
+            // Act
+            var result = _stringCalculator.Add("//[foo][**][^]\n1**2^3foo4");
+
+            // Assert
+            result.Should().Be(10);
+        }
     }
 }
