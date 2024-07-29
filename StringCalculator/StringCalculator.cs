@@ -10,8 +10,15 @@
                 return 0;
             }
 
-            // convert string number to int
-            return Convert.ToInt32(numbers);
+            // two numbers in a string
+            var numbersList = numbers.Split(',').ToList();
+
+            var sum = 0;
+
+            // convert string number to int and add
+            numbersList.ForEach(x => sum += Convert.ToInt32(x));
+
+            return sum;
         }
     }
 }
