@@ -96,14 +96,17 @@ namespace StringCalculator.UnitTests
             result.Should().Be(sum);
         }
 
-        [Fact]
-        public void Add_AnyLengthDelimiter_ReturnsCorrectSum()
+        [Theory]
+        [InlineData("//[*]\n1*2*3", 6)]
+        [InlineData("//[*^*]\n1*^*2*^*3", 6)]
+        [InlineData("//[!*^*!]\n1!*^*!2!*^*!3", 6)]
+        public void Add_AnyLengthDelimiter_ReturnsCorrectSum(string numbers, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("//[***]\n1***2***3");
+            var result = _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Be(6);
+            result.Should().Be(sum);
         }
     }
 }

@@ -11,17 +11,26 @@
             }
 
             // list of the delimiters
-            var delimiters = new List<char> { ',', '\n' };
+            var delimiters = new List<string> { ",", "\n" };
 
             // check for different delimiter
             if (numbers.StartsWith("//"))
             {
-                delimiters.Add(numbers[2]);
-                numbers = numbers.Substring(4);
+                // check if delimiter is longer than one character
+                int newLineDelimiterIndex = numbers.IndexOf('\n');
+                if (newLineDelimiterIndex >= 5)
+                {
+                    delimiters.Add(numbers.Substring(3, newLineDelimiterIndex - 4));
+                }
+                else
+                {
+                    delimiters.Add(numbers[2].ToString());
+                }
+                numbers = numbers.Substring(newLineDelimiterIndex + 1);
             }
 
             // convert all numbers from string to integers
-            var values = numbers.Split(delimiters.ToArray())
+            var values = numbers.Split(delimiters.ToArray(), StringSplitOptions.None)
                 .Select(x => Convert.ToInt32(x))
                 .Where(x => x <= 1000);
 
