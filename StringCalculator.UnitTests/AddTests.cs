@@ -83,14 +83,17 @@ namespace StringCalculator.UnitTests
             result.Should().Throw<Exception>().WithMessage(errorMessage);
         }
 
-        [Fact]
-        public void Add_BiggerThan1000_IgnoresNumber()
+        [Theory]
+        [InlineData("1001,12", 12)]
+        [InlineData("1000,15", 1015)]
+        [InlineData("1000,1000,1001,1", 2001)]
+        public void Add_BiggerThan1000_IgnoresNumber(string numbers, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("1001,2");
+            var result = _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Be(2);
+            result.Should().Be(sum);
         }
     }
 }
