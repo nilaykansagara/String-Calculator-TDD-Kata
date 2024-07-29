@@ -82,5 +82,15 @@ namespace StringCalculator.UnitTests
             // Assert
             result.Should().Throw<Exception>().WithMessage(errorMessage);
         }
+
+        [Fact]
+        public void Add_BiggerThan1000_IgnoresNumber()
+        {
+            // Act
+            var result = _stringCalculator.Add("1001,2");
+
+            // Assert
+            result.Should().Be(2);
+        }
     }
 }
