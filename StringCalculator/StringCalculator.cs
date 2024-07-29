@@ -20,10 +20,19 @@
                 numbers = numbers.Substring(4);
             }
 
-            // convert all numbers to int and sum up them
-            return numbers.Split(delimiters.ToArray())
-                    .Select(x => Convert.ToInt32(x))
-                    .Sum();
+            // convert all numbers from string to integers
+            var values = numbers.Split(delimiters.ToArray())
+                .Select(x => Convert.ToInt32(x));
+
+            // check for negative number
+            var negativeNumbers = values.Where(x => x < 0).ToList();
+            if (negativeNumbers.Any())
+            {
+                throw new Exception($"Negative numbers not allowed: {string.Join(",", negativeNumbers)}");
+            }
+
+            // sum up all numbers
+            return values.Sum();
         }
     }
 }

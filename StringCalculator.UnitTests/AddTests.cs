@@ -71,14 +71,16 @@ namespace StringCalculator.UnitTests
             result.Should().Be(sum);
         }
 
-        [Fact]
-        public void Add_NegativeNumber_ThrowsException()
+        [Theory]
+        [InlineData("-1", "Negative numbers not allowed: -1")]
+        [InlineData("-1,2,-3,4,-5", "Negative numbers not allowed: -1,-3,-5")]
+        public void Add_NegativeNumbers_ThrowsExceptionWithNegativeNumbersInErrorMessage(string numbers, string errorMessage)
         {
             // Act
-            Action result = () => _stringCalculator.Add("-1");
+            Action result = () => _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Throw<Exception>();
+            result.Should().Throw<Exception>().WithMessage(errorMessage);
         }
     }
 }
