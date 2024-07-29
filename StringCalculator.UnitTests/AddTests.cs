@@ -61,7 +61,7 @@ namespace StringCalculator.UnitTests
 
         [Theory]
         [InlineData("//;\n3;4", 7)]
-        [InlineData("//^\n2^3^5", 10)]
+        [InlineData("///\n5/7/9", 21)]
         public void Add_DifferentDelimiter_ReturnsCorrectSum(string numbers, int sum)
         {
             // Act
@@ -97,7 +97,7 @@ namespace StringCalculator.UnitTests
         }
 
         [Theory]
-        [InlineData("//[*]\n1*2*3", 6)]
+        [InlineData("//[|]\n1|2|3", 6)]
         [InlineData("//[*^*]\n1*^*2*^*3", 6)]
         [InlineData("//[!*^*!]\n1!*^*!2!*^*!3", 6)]
         public void Add_AnyLengthDelimiter_ReturnsCorrectSum(string numbers, int sum)
@@ -110,7 +110,7 @@ namespace StringCalculator.UnitTests
         }
 
         [Fact]
-        public void Add_MultipleDifferentDelimiter_ReturnsCorrectSum()
+        public void Add_MultipleDifferentDelimitersOfSingleLength_ReturnsCorrectSum()
         {
             // Act
             var result = _stringCalculator.Add("//[&][%][$]\n1%2$3&4");
@@ -119,14 +119,16 @@ namespace StringCalculator.UnitTests
             result.Should().Be(10);
         }
 
-        [Fact]
-        public void Add_MultipleDifferentDelimiterOfAnyLength_ReturnsCorrectSum()
+        [Theory]
+        [InlineData("//[foo][bar]\n1foo2bar3", 6)]
+        [InlineData("//[foo][**][^]\n1**2^3foo4", 10)]
+        public void Add_MultipleDifferentDelimitersOfAnyLength_ReturnsCorrectSum(string numbers, int sum)
         {
             // Act
-            var result = _stringCalculator.Add("//[foo][**][^]\n1**2^3foo4");
+            var result = _stringCalculator.Add(numbers);
 
             // Assert
-            result.Should().Be(10);
+            result.Should().Be(sum);
         }
     }
 }
