@@ -132,8 +132,50 @@ The tests cover various scenarios for the `Add` method of the `StringCalculator`
 
     **`coverlet.collector`**: 3.1.2 - Collects code coverage for .NET projects.
 
+    **`ReportGenerator`: 5.3.8 - Generates human readable report from a code coverage file.
+
 ## How to Run Tests
 
 To run the tests, use the following command:
 
     dotnet test StringCalculator.UnitTests
+
+## Code Coverage
+
+As part of ensuring the quality and reliability of the tests, this project uses code coverage tools to verify test completeness, even though the Test-Driven Development (TDD) approach aims for 100% test coverage. 
+
+### Code Coverage Process
+
+1. **Coverage Collection**: The `coverlet.collector` package is utilized to collect code coverage data during unit test execution.
+
+2. **Report Generation**: The `ReportGenerator` NuGet package processes the generated Cobertura XML file to create a detailed and user-friendly code coverage report.
+
+### Steps to Generate and View the Coverage Report
+
+1. **Run the Tests with Coverage Collection**:
+    ```sh
+    dotnet test --collect:"XPlat Code Coverage"
+    ```
+
+2. **Generate the Coverage Report**:
+    ```sh
+    reportgenerator -reports:{path-to-coverage-file} -targetdir:{path-to-output-directory}
+    ```
+    Replace `{path-to-coverage-file}` with the path to the Cobertura XML file generated from the test run (e.g., `coverage.cobertura.xml`), and `{path-to-output-directory}` with the directory where you want the report to be saved (e.g., `coverage-report`).
+
+3. **Review the Coverage Report**:
+   - Open the generated report located in the `{path-to-output-directory}` directory to review the coverage metrics and details.
+
+By using these tools, we ensure that all code paths are tested and maintain the high quality and reliability of the software. Although the TDD approach aims for 100% test coverage, the code coverage report serves as an additional verification step.
+
+### Generated Code Coverage Report for `StringCalculator` project
+
+A code coverage report has already been generated and included in the solution. You can review the coverage metrics and details in the following locations:
+
+- **Coverage Report File**: [reports/coverage/index.html](reports/coverage/index.html)  
+  This HTML file provides a detailed view of the code coverage results (line by line).
+
+- **Coverage Data File**: [coverage.cobertura.xml](coverage.cobertura.xml)  
+  This XML file contains the raw code coverage data collected during testing.
+
+These files are included in the repository to provide an overview of test coverage and ensure transparency and quality of the code.

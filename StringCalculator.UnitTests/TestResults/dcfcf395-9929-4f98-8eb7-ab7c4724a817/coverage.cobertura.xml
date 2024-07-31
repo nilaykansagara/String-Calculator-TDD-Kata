@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="1" branch-rate="1" version="1.9" timestamp="1722391948" lines-covered="29" lines-valid="29" branches-covered="8" branches-valid="8">
+  <sources>
+    <source>C:\</source>
+  </sources>
+  <packages>
+    <package name="StringCalculator" line-rate="1" branch-rate="1" complexity="8">
+      <classes>
+        <class name="StringCalculator.StringCalculator" filename="Users\nilay\Downloads\String-Calculator-Kata\StringCalculator\StringCalculator.cs" line-rate="1" branch-rate="1" complexity="8">
+          <methods>
+            <method name="Add" signature="(System.String)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="6" hits="21" branch="False" />
+                <line number="8" hits="21" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="9" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="9" hits="1" branch="False" />
+                <line number="10" hits="1" branch="False" />
+                <line number="14" hits="20" branch="False" />
+                <line number="17" hits="20" branch="False" />
+                <line number="18" hits="132" branch="False" />
+                <line number="21" hits="20" branch="False" />
+                <line number="24" hits="71" branch="False" />
+                <line number="25" hits="19" branch="False" />
+              </lines>
+            </method>
+            <method name="ExtractDelimiters" signature="(System.String&amp;)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="28" hits="20" branch="False" />
+                <line number="29" hits="20" branch="False" />
+                <line number="32" hits="20" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="45" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="33" hits="8" branch="False" />
+                <line number="34" hits="8" branch="False" />
+                <line number="35" hits="8" branch="False" />
+                <line number="38" hits="8" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="78" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="39" hits="8" branch="False" />
+                <line number="40" hits="8" branch="False" />
+                <line number="42" hits="8" branch="False" />
+                <line number="43" hits="8" branch="False" />
+                <line number="45" hits="20" branch="False" />
+                <line number="46" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="CheckNegativeNumbers" signature="(System.Collections.Generic.List`1&lt;System.Int32&gt;)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="49" hits="20" branch="False" />
+                <line number="50" hits="79" branch="False" />
+                <line number="51" hits="20" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="52" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="52" hits="2" branch="False" />
+                <line number="53" hits="2" branch="False" />
+                <line number="55" hits="18" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="21" branch="False" />
+            <line number="8" hits="21" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="9" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="9" hits="1" branch="False" />
+            <line number="10" hits="1" branch="False" />
+            <line number="14" hits="20" branch="False" />
+            <line number="17" hits="20" branch="False" />
+            <line number="18" hits="132" branch="False" />
+            <line number="21" hits="20" branch="False" />
+            <line number="24" hits="71" branch="False" />
+            <line number="25" hits="19" branch="False" />
+            <line number="28" hits="20" branch="False" />
+            <line number="29" hits="20" branch="False" />
+            <line number="32" hits="20" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="45" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="33" hits="8" branch="False" />
+            <line number="34" hits="8" branch="False" />
+            <line number="35" hits="8" branch="False" />
+            <line number="38" hits="8" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="78" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="39" hits="8" branch="False" />
+            <line number="40" hits="8" branch="False" />
+            <line number="42" hits="8" branch="False" />
+            <line number="43" hits="8" branch="False" />
+            <line number="45" hits="20" branch="False" />
+            <line number="46" hits="20" branch="False" />
+            <line number="49" hits="20" branch="False" />
+            <line number="50" hits="79" branch="False" />
+            <line number="51" hits="20" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="52" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="52" hits="2" branch="False" />
+            <line number="53" hits="2" branch="False" />
+            <line number="55" hits="18" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
