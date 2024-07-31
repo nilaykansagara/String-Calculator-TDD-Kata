@@ -172,10 +172,10 @@ By using these tools, we ensure that all code paths are tested and maintain the 
 
 A code coverage report has already been generated and included in the solution. You can review the coverage metrics and details in the following locations:
 
-- **Coverage Report File**: [reports/coverage/index.html](reports/coverage/index.html)  
-  This HTML file provides a detailed view of the code coverage results (line by line).
+- **Coverage Report File**: [reports/coverage/index.html](reports/coverage/index.html)<br/>
+  This HTML file provides a detailed view of the code coverage results. [CLICK HERE](https://html-preview.github.io/?url=https://raw.githubusercontent.com/nilaykansagara/String-Calculator-TDD-Kata/master/reports/coverage/StringCalculator_StringCalculator.html) to see the detailed line by line coverage of the code.
 
-- **Coverage Data File**: [coverage.cobertura.xml](coverage.cobertura.xml)  
+- **Coverage Data File**: [coverage.cobertura.xml](StringCalculator.UnitTests/TestResults/dcfcf395-9929-4f98-8eb7-ab7c4724a817/coverage.cobertura.xml)  
   This XML file contains the raw code coverage data collected during testing.
 
 These files are included in the repository to provide an overview of test coverage and ensure transparency and quality of the code.
